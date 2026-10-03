@@ -1,0 +1,9 @@
+dist
+out
+cache
+node_modules
+lib
+coverage
+data
+broadcast
+package-lock.json

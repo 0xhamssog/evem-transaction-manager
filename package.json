@@ -1,0 +1,51 @@
+{
+  "name": "evm-transaction-manager",
+  "version": "1.0.0",
+  "description": "Reusable engineering reference implementation for EVM transaction management.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-migrations.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "example:submit": "tsx examples/submit-transaction.ts",
+    "example:wait": "tsx examples/wait-for-confirmation.ts",
+    "example:revert": "tsx examples/simulate-failure.ts"
+  },
+  "keywords": [
+    "ethereum",
+    "evm",
+    "transaction",
+    "nonce",
+    "viem"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "viem": "^2.57.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.19.1",
+    "eslint": "^9.39.5",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.0",
+    "vitest": "^3.2.7"
+  }
+}
